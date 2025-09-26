@@ -1,6 +1,6 @@
-package builder;
+package src.cs5800.java.builder;
 import java.util.ArrayList;
-import builder.Toppings;
+import src.cs5800.java.builder.Toppings;
 
 public class PizzaBuilder {
     private ArrayList<Toppings>toppings;

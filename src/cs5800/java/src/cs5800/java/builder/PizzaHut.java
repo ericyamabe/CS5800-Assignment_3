@@ -1,4 +1,4 @@
-package builder;
+package src.cs5800.java.builder;
 import java.util.ArrayList;
 
 public class PizzaHut extends Company {
