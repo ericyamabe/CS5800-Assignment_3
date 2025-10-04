@@ -1,6 +1,5 @@
-package src.cs5800.java.builder;
+package pizza.builder;
 import java.util.ArrayList;
-import src.cs5800.java.builder.Toppings;
 
 public class Pizza {
     private ArrayList<Toppings>toppings;
@@ -17,8 +16,7 @@ public class Pizza {
         this.toppings.add(topping);
     }
 
-    @Override
-    public String toString() {
+    public String eat() {
         return this.size + " Pizza {" + this.toppings.toString() + "}";
     }
 }
