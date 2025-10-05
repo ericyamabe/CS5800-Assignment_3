@@ -4,9 +4,6 @@ import macronutrients.library.dietplan.NoRestrictionFactory;
 import macronutrients.library.dietplan.NutAllergyFactory;
 import macronutrients.library.dietplan.PaleoFactory;
 import macronutrients.library.dietplan.VeganFactory;
-import macronutrients.library.macronutrient.CarbsFactory;
-import macronutrients.library.macronutrient.FatsFactory;
-import macronutrients.library.macronutrient.ProteinFactory;
 
 public class DietPlanFactoryCreator {
     public static DietPlanFactory createDietPlanFactory(String dietName){

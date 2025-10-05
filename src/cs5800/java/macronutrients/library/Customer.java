@@ -1,9 +1,7 @@
 package macronutrients.library;
 
-import macronutrients.library.dietplan.NoRestrictionFactory;
-import macronutrients.library.dietplan.NutAllergyFactory;
-import macronutrients.library.dietplan.PaleoFactory;
-import macronutrients.library.dietplan.VeganFactory;
+import macronutrients.library.MacronutrientFactoryCreator;
+import macronutrients.library.DietPlanFactoryCreator;
 
 import java.util.ArrayList;
 
