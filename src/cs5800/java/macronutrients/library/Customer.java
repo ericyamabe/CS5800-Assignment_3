@@ -24,16 +24,16 @@ public class Customer {
         this.dietPlanName = dietPlan;
         switch (dietPlan) {
             case "Paleo":
-                this.dietPlan = new Paleo();
+                this.dietPlan = Paleo.getInstance();
                 break;
             case "Vegan":
-                this.dietPlan = new Vegan();
+                this.dietPlan = Vegan.getInstance();
                 break;
             case "Nut Allergy":
-                this.dietPlan = new NutAllergy();
+                this.dietPlan = NutAllergy.getInstance();
                 break;
             default:
-                this.dietPlan = new NoRestriction();
+                this.dietPlan = NoRestriction.getInstance();
                 break;
         }
     }
