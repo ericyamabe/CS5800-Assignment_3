@@ -4,10 +4,10 @@ import java.util.Random;
 import java.util.ArrayList;
 
 public abstract class MacronutrientFactory {
-    protected DietPlan dietPlan;
+    protected DietPlanFactory dietPlan;
     protected ArrayList<String>foodList = new ArrayList<String>();
 
-    public void setDietPlan(DietPlan dietPlan) {
+    public void setDietPlan(DietPlanFactory dietPlan) {
         this.dietPlan = dietPlan;
     }
 

@@ -1,11 +1,11 @@
 package macronutrients.library.dietplan;
 
-import macronutrients.library.DietPlan;
+import macronutrients.library.DietPlanFactory;
 
-public class Vegan extends DietPlan {
-    private static Vegan instance;
+public class VeganFactory extends DietPlanFactory {
+    private static VeganFactory instance;
 
-    private Vegan() {
+    private VeganFactory() {
         this.foodExclusions.add("Fish");
         this.foodExclusions.add("Chicken");
         this.foodExclusions.add("Tuna");
@@ -13,10 +13,10 @@ public class Vegan extends DietPlan {
         this.foodExclusions.add("Sour cream");
     }
 
-    public static Vegan getInstance() {
+    public static VeganFactory getInstance() {
         if (instance == null)
         {
-            instance = new Vegan();
+            instance = new VeganFactory();
         }
         return instance;
     }

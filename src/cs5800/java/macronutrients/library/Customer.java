@@ -1,18 +1,15 @@
 package macronutrients.library;
 
-import macronutrients.library.dietplan.NoRestriction;
-import macronutrients.library.dietplan.NutAllergy;
-import macronutrients.library.dietplan.Paleo;
-import macronutrients.library.dietplan.Vegan;
-import macronutrients.library.macronutrient.CarbsFactory;
-import macronutrients.library.macronutrient.FatsFactory;
-import macronutrients.library.macronutrient.ProteinFactory;
+import macronutrients.library.dietplan.NoRestrictionFactory;
+import macronutrients.library.dietplan.NutAllergyFactory;
+import macronutrients.library.dietplan.PaleoFactory;
+import macronutrients.library.dietplan.VeganFactory;
 
 import java.util.ArrayList;
 
 public class Customer {
     private String name;
-    private DietPlan dietPlan;
+    private DietPlanFactory dietPlan;
     private String dietPlanName;
     private ArrayList<String> meal = new ArrayList<>();
 
@@ -22,20 +19,7 @@ public class Customer {
 
     public void setDietPlan(String dietPlan) {
         this.dietPlanName = dietPlan;
-        switch (dietPlan) {
-            case "Paleo":
-                this.dietPlan = Paleo.getInstance();
-                break;
-            case "Vegan":
-                this.dietPlan = Vegan.getInstance();
-                break;
-            case "Nut Allergy":
-                this.dietPlan = NutAllergy.getInstance();
-                break;
-            default:
-                this.dietPlan = NoRestriction.getInstance();
-                break;
-        }
+        this.dietPlan = DietPlanFactoryCreator.createDietPlanFactory(dietPlan);
     }
     public void generateMealPlan() {
         this.getCarbEntree();
@@ -44,19 +28,19 @@ public class Customer {
     }
 
     protected void getCarbEntree() {
-        CarbsFactory carbsFactory = CarbsFactory.getInstance();
+        MacronutrientFactory carbsFactory = MacronutrientFactoryCreator.createMacronutrientFactory("Carbs");
         carbsFactory.setDietPlan(this.dietPlan);
         this.meal.add(carbsFactory.randomSelectFoodItem());
     }
 
     protected void getProtienEntree() {
-        ProteinFactory proteinFactory = ProteinFactory.getInstance();
+        MacronutrientFactory proteinFactory = MacronutrientFactoryCreator.createMacronutrientFactory("Protein");
         proteinFactory.setDietPlan(this.dietPlan);
         this.meal.add(proteinFactory.randomSelectFoodItem());
     }
 
     protected void getFatsEntree() {
-        FatsFactory fatsFactory = FatsFactory.getInstance();
+        MacronutrientFactory fatsFactory = MacronutrientFactoryCreator.createMacronutrientFactory("Fats");
         fatsFactory.setDietPlan(this.dietPlan);
         this.meal.add(fatsFactory.randomSelectFoodItem());
     }

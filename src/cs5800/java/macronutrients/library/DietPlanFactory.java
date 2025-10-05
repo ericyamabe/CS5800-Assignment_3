@@ -1,7 +1,7 @@
 package macronutrients.library;
 import java.util.ArrayList;
 
-public abstract class DietPlan {
+public abstract class DietPlanFactory {
     protected ArrayList<String>foodExclusions = new ArrayList<String>();
 
     public boolean isExcluded(String foodItem) {

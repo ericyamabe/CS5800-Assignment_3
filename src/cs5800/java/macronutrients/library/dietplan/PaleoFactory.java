@@ -1,20 +1,20 @@
 package macronutrients.library.dietplan;
 
-import macronutrients.library.DietPlan;
+import macronutrients.library.DietPlanFactory;
 
-public class Paleo extends DietPlan {
-    private static Paleo instance;
+public class PaleoFactory extends DietPlanFactory {
+    private static PaleoFactory instance;
 
-    private Paleo() {
+    private PaleoFactory() {
         this.foodExclusions.add("Tofu");
         this.foodExclusions.add("Cheese");
         this.foodExclusions.add("Sour cream");
     }
 
-    public static Paleo getInstance()
+    public static PaleoFactory getInstance()
     {
         if (instance == null) {
-            instance = new Paleo();
+            instance = new PaleoFactory();
         }
         return instance;
     }
